@@ -15,4 +15,18 @@ fn main() {
     let spaces = "   ";
     let spaces = spaces.len();
     println!("spaces is: {}", spaces);
+
+    let x = 2.0;
+    let y: f32 = 3.0;
+
+    let t = true;
+    let f: bool = false;
+
+    let c = 'z';
+    let z = 'Z';
+
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+    let (x, y, z) = tup;
+    println!("The value of y is: {}", y);
+    println!("the tup.1 is: {}", tup.1);
 }
