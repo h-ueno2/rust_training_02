@@ -47,9 +47,10 @@ fn main() {
     let hello = &s[0..5];
     let hello = &s[..5];
     let world = &s[6..11];
-    
+        
     let word = first_word(&s);
     // s.clear(); // wordに不変借用されているため、ここでエラーとなる。
+    println!("{}", word);
 }
 
 fn first_word(s: &String) -> &str {
