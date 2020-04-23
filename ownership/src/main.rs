@@ -42,6 +42,25 @@ fn main() {
     r3.push_str("a");
 
     let reference_to_nothing = dangle();
+
+    let mut s = String::from("hello world");
+    let hello = &s[0..5];
+    let hello = &s[..5];
+    let world = &s[6..11];
+    
+    let word = first_word(&s);
+    // s.clear(); // wordに不変借用されているため、ここでエラーとなる。
+}
+
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+    &s[..]
 }
 
 // fn dangle() -> &String { // Stringへの参照を返却する
