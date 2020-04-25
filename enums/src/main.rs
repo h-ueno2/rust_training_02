@@ -6,6 +6,16 @@ fn main() {
     let five = Some(5);
     let six = plus_one(five);
     println!("{:#?}",six);
+
+    let some_u8_value = Some(0u8);
+    // match some_u8_value {
+    //     Some(3) => println!("three"),
+    //     _ => (),
+    // };
+
+    if let Some(3) = some_u8_value {
+        println!("three");
+    }
 }
 
 enum IpAddrKind {
