@@ -1,18 +1,6 @@
-mod client;
+pub mod client;
 
-mod network {
-    fn connect() {
-
-    }
-
-    // モジュール内にモジュールを定義できる
-    // network::client
-    mod server {
-        fn connect() {
-        }
-    }
-}
-
+pub mod network;
 
 #[cfg(test)]
 mod tests {
