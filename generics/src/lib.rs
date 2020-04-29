@@ -45,3 +45,5 @@ pub mod summary {
     }
 
 }
+
+pub mod lifetime_sample;
