@@ -3,7 +3,6 @@ pub struct AveragedCollection {
     average: f64,
 }
 
-
 impl AveragedCollection {
     pub fn add(&mut self, value: i32) {
         self.list.push(value);
@@ -16,7 +15,7 @@ impl AveragedCollection {
             Some(value) => {
                 self.update_average();
                 Some(value)
-            },
+            }
             None => None,
         }
     }
@@ -29,4 +28,29 @@ impl AveragedCollection {
         let total: i32 = self.list.iter().sum();
         self.average = total as f64 / self.list.len() as f64;
     }
+}
+
+pub trait Draw {
+    fn draw(&self);
+}
+
+pub struct Screen {
+    pub components: Vec<Box<Draw>>,
+}
+
+impl Screen {
+    pub fn run(&self) {
+        for component in self.components.iter() {
+            component.draw();
+        }
+    }
+}
+pub struct Button {
+    pub width: u32,
+    pub height: u32,
+    pub label: String,
+}
+
+impl Draw for Button {
+    fn draw(&self) {}
 }

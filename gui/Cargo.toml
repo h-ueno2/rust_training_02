@@ -1,5 +1,5 @@
 [package]
-name = "objective_sample"
+name = "gui"
 version = "0.1.0"
 authors = ["h-ueno2 <menbou1212@gmail.com>"]
 edition = "2018"
