@@ -6,6 +6,15 @@ fn main() {
     let simulated_random_number = 7;
 
     generate_workout(simulated_user_specified_value, simulated_random_number);
+
+    let answer = do_twice(add_one, 5);
+    println!("answer is: {}", answer);
+
+    let list_of_numbers = vec![1,2,3];
+    let list_of_strings: Vec<String> = list_of_numbers
+        .iter()
+        .map(|i| i.to_string())
+        .collect();
 }
 
 fn generate_workout(intensity: u32, random_number: u32) {
@@ -51,3 +60,17 @@ impl<T> Cacher<T> where T: Fn(u32) -> u32 {
         }
     }
 }
+
+fn add_one(x: i32) -> i32 {
+    x + 1
+}
+
+fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {
+    f(arg) + f(arg)
+}
+
+fn returns_closure() -> Box<Fn(i32) -> i32> {
+    Box::new(|x| x + 1)
+}
+
+
